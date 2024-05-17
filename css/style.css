@@ -3,3 +3,40 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: sans-serif;
+}
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+header button {
+    padding: .2rem 1rem;
+}
+
+main {
+    background-color: #89CFF0;
+    height: calc(100% - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    height: 50px;
+    padding: 1rem 3rem;
+}
+
+/* .square color #5b85dd */
