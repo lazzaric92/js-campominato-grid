@@ -8,6 +8,16 @@ body {
     font-family: sans-serif;
 }
 
+:root {
+    --cells-number: 10;
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 div.container {
     display: flex;
     flex-direction: column;
@@ -24,19 +34,34 @@ header {
 
 header button {
     padding: .2rem 1rem;
+    cursor: pointer;
 }
 
 main {
     background-color: #89CFF0;
     height: calc(100% - 120px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+#grid {
+    width: 500px;
+    height: 500px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#grid article.square {
+    width: calc(100% / var(--cells-number) - 2px);
+    height: calc(100% / var(--cells-number) - 2px);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#grid article.square.active {
+    background-color: #5b85dd;
+    color: white;
 }
 
 footer {
     height: 50px;
     padding: 1rem 3rem;
 }
-
-/* .square color #5b85dd */
