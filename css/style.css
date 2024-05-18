@@ -9,18 +9,20 @@ body {
 }
 
 :root {
-    --cells-number: 10;
     --dark-blue: #001533;
     --baby-blue: #89CFF0;
     --blue: #5b85dd;
 }
 
+/* || UTILS */
 .flex-centered {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+
+/* || */
 div.container {
     display: flex;
     flex-direction: column;
@@ -71,6 +73,7 @@ header #play:hover {
     color: white;
 }
 
+/* || MAIN */
 main {
     background-color: var(--baby-blue);
     height: calc(100% - 120px);
@@ -84,10 +87,20 @@ main {
 }
 
 #grid article.cell {
-    width: calc(100% / var(--cells-number) - 2px);
-    height: calc(100% / var(--cells-number) - 2px);
+    width: calc(100% / 10 - 2px);
+    height: calc(100% / 10 - 2px);
     border: 1px solid var(--dark-blue);
     cursor: pointer;
+}
+
+#grid article.cell.medium {
+    width: calc(100% / 9 - 2px);
+    height: calc(100% / 9 - 2px);
+}
+
+#grid article.cell.hard {
+    width: calc(100% / 7 - 2px);
+    height: calc(100% / 7 - 2px);
 }
 
 #grid article.cell.active {
@@ -95,6 +108,7 @@ main {
     color: white;
 }
 
+/* || FOOTER */
 footer {
     height: 50px;
     padding: 1rem 2rem;

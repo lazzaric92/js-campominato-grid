@@ -21,6 +21,13 @@ playButtonEl.addEventListener('click', function(){
         spanEl.append(index + 1);
         articleEl.appendChild(spanEl)
 
+        // > dimensioni della cella
+        if (gameDifficulty == 'medium'){
+            articleEl.classList.add('medium');
+        } else if (gameDifficulty == 'hard'){
+            articleEl.classList.add('hard');
+        }
+
         // > la cella deve essere cliccabile
         articleEl.addEventListener('click', function(){
             articleEl.classList.toggle('active');

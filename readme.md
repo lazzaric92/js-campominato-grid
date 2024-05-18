@@ -26,6 +26,8 @@ Dichiaro una variabile per la difficoltà
 
 Richiamo la funzione 'setDifficulty' con option.value come argomento (deve essere la prima cosa che avviene in pagina)
 
+Nel ciclo per creare le celle aggiungo una classe alla cella (per il calcolo della grandezza) a seconda della difficoltà scelta
+
 Creo una funzione 'setDifficulty' con parametro 'a' che setti la difficoltà al valore 'a' e
     - se 'a' è uguale a 'medium', allora le celle sono 81;
     - se 'a' è uguale a 'hard', allora le celle sono 49 ;
