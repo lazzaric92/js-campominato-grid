@@ -14,7 +14,8 @@
                 <h1>Campo Minato</h1>
             </div>
             <div class="flex-centered">
-                <select name="difficulty-selector" id="difficulty-selector">
+                <select id="difficulty-selector" onchange="setDifficulty(this.value)">
+                    <option value="" selected disabled>Select difficulty</option>
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>

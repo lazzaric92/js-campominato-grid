@@ -83,14 +83,14 @@ main {
     align-content: center;
 }
 
-#grid article.square {
+#grid article.cell {
     width: calc(100% / var(--cells-number) - 2px);
     height: calc(100% / var(--cells-number) - 2px);
     border: 1px solid var(--dark-blue);
     cursor: pointer;
 }
 
-#grid article.square.active {
+#grid article.cell.active {
     background-color: var(--blue);
     color: white;
 }
