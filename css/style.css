@@ -5,11 +5,14 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
 }
 
 :root {
     --cells-number: 10;
+    --dark-blue: #001533;
+    --baby-blue: #89CFF0;
+    --blue: #5b85dd;
 }
 
 .flex-centered {
@@ -22,6 +25,7 @@ div.container {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    color: var(--dark-blue);
 }
 
 header {
@@ -29,16 +33,46 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 3rem;
+    padding: 0 2rem;
 }
 
-header button {
-    padding: .2rem 1rem;
+header > div img {
+    margin-right: 1rem;
+    width: 2.5rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header #difficulty-selector,
+header #play {
+    color: var(--dark-blue);
+    border-radius: 8px;
     cursor: pointer;
+    border: 1px solid transparent;
+}
+
+header #difficulty-selector {
+    margin-right: 1rem;
+    background-color: white;
+    border-color: #888383;
+    padding: .4rem .5rem;
+}
+
+header #play {
+    padding: .4rem 1.5rem;
+    background-color: var(--baby-blue);
+    font-size: .9rem;
+}
+
+header #play:hover {
+    background-color: var(--blue);
+    color: white;
 }
 
 main {
-    background-color: #89CFF0;
+    background-color: var(--baby-blue);
     height: calc(100% - 120px);
 }
 
@@ -52,16 +86,16 @@ main {
 #grid article.square {
     width: calc(100% / var(--cells-number) - 2px);
     height: calc(100% / var(--cells-number) - 2px);
-    border: 1px solid black;
+    border: 1px solid var(--dark-blue);
     cursor: pointer;
 }
 
 #grid article.square.active {
-    background-color: #5b85dd;
+    background-color: var(--blue);
     color: white;
 }
 
 footer {
     height: 50px;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
 }
