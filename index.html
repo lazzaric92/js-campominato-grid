@@ -14,7 +14,7 @@
                 <h1>Campo Minato</h1>
             </div>
             <div class="flex-centered">
-                <select id="difficulty-selector" onchange="setDifficulty(this.value)">
+                <select id="difficulty-selector">
                     <option value="" selected disabled>Select difficulty</option>
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -25,6 +25,10 @@
         </header>
     
         <main class="flex-centered">
+            <section id="grid" class="flex-centered"></section>
+            <section>
+                <p class="score">Select difficulty and start a new game!</p>
+            </section>
         </main>
     
         <footer>

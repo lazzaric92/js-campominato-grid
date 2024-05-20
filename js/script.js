@@ -1,63 +1,65 @@
 // || SELECTORS
 const playButtonEl = document.querySelector('header button#play');
-const mainEl = document.querySelector('main');
+const difficultySelectorEl = document.querySelector('#difficulty-selector');
+const gridEl = document.querySelector('#grid');
 
-// || VARIABLES
-let cellsNumber;
-let gameDifficulty;
 
-// || INIT
-setDifficulty(document.querySelector('option').value);
+
 
 playButtonEl.addEventListener('click', function(){
-    mainEl.innerHTML = '<section id="grid" class="flex-centered">';
-    const gridEl = document.querySelector('#grid');
-
-    // > ciclo for per creare le celle e il loro contenuto
-    for(let index = 0; index < cellsNumber; index++){
-        const articleEl = document.createElement('article');
-        articleEl.classList.add('cell', 'flex-centered');
-        const spanEl = document.createElement('span');
-        spanEl.append(index + 1);
-        articleEl.appendChild(spanEl)
-
-        // > dimensioni della cella
-        if (gameDifficulty == 'medium'){
-            articleEl.classList.add('medium');
-        } else if (gameDifficulty == 'hard'){
-            articleEl.classList.add('hard');
-        }
-
-        // > la cella deve essere cliccabile
-        articleEl.addEventListener('click', function(){
-            articleEl.classList.toggle('active');
-        })
-
-        gridEl.appendChild(articleEl);
-    }
-    
+    generateNewGame(gridEl, difficultySelectorEl.value);
 })
 
 
 // || FUNCTIONS
 
-// --> funzione per settare la difficoltà
-/** funzione per settare la difficoltà del gioco
- * 
- * @param {*} a option.value
+// --> function to start a new game
+/**
+ *  Funzione che genera una nuova partita
+ * @param {*} containerEl  container che farà da griglia 
+ * @param {*} difficultyValue  valore del selettore della difficoltà
  */
-function setDifficulty(a){
-    gameDifficulty = a;
-    if (gameDifficulty == 'medium'){
-        cellsNumber = 81;
-    } else if (gameDifficulty == 'hard'){
-        cellsNumber = 49;
-    } else {
-        cellsNumber = 100;
+function generateNewGame(containerEl, difficultyValue){
+    containerEl.innerHTML = '';
+    let cellsNumber;
+    let className;
+
+    // > switch per settare la difficoltà
+    switch(difficultyValue) {
+        case 'easy':
+            cellsNumber = 100;
+            className = 'easy';
+            break;
+        case 'medium':
+            cellsNumber = 81;
+            className = 'medium';
+            break;
+        case 'hard':
+            cellsNumber = 49;
+            className = 'hard';
+            break;
+        default:
+            cellsNumber = 100;
+            className = 'easy';
+    }
+    
+    // > ciclo for per creare le celle e il loro contenuto
+    for(let index = 0; index < cellsNumber; index++){
+        const articleEl = document.createElement('article');
+        articleEl.classList.add('cell', 'flex-centered', className);
+        const spanEl = document.createElement('span');
+        spanEl.append(index + 1);
+        articleEl.appendChild(spanEl);
+        
+        // > la cella deve essere cliccabile
+        articleEl.addEventListener('click', function(){
+            articleEl.classList.add('active');
+        })
+
+        containerEl.appendChild(articleEl);
     }
 }
 
 
 // || MEMO
-// <section id="grid" class="flex-centered">
 // <article class="cell flex-centered">

@@ -77,6 +77,7 @@ header #play:hover {
 main {
     background-color: var(--baby-blue);
     height: calc(100% - 120px);
+    flex-direction: column;
 }
 
 #grid {
@@ -87,10 +88,13 @@ main {
 }
 
 #grid article.cell {
-    width: calc(100% / 10 - 2px);
-    height: calc(100% / 10 - 2px);
     border: 1px solid var(--dark-blue);
     cursor: pointer;
+}
+
+#grid article.cell.easy {
+    width: calc(100% / 10 - 2px);
+    height: calc(100% / 10 - 2px);
 }
 
 #grid article.cell.medium {
